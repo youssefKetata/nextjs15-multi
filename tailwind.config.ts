@@ -2,17 +2,24 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+    colors: {
+      background: "#282828",
+      foreground: "#53ed38",
+      dark: {
+        background: "#3f1ad2",
+        foreground: "#661fc3",
       },
     },
+    extend: {
+      colors: {
+      },
+      
+    },
   },
+  darkMode: 'selector',
   plugins: [],
 } satisfies Config;

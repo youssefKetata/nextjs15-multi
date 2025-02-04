@@ -1,0 +1,47 @@
+@use '../scss/tailwind.scss' as *;
+// @use '../scss/base' as *;
+// @use '../scss/globals' as *;
+
+$color-bg-primary: theme('colors.background');
+$color-text-primary: theme('colors.foreground');
+
+$color-bg-dark: theme('colors.dark.background');
+$color-text-dark: theme('colors.dark.foreground');
+
+@mixin dark-mode {
+  html {
+    background-color: $color-bg-dark;
+    color: $color-text-dark;
+  }
+}
+
+// general function for for mapping colors
+@function map-colors($colors) {
+  @return map-merge(
+    (
+      'primary': map-get($colors, 'primary'),
+      'secondary': map-get($colors, 'secondary'),
+      'tertiary': map-get($colors, 'tertiary'),
+      'success': map-get($colors, 'success'),
+      'warning': map-get($colors, 'warning'),
+      'danger': map-get($colors, 'danger'),
+      'info': map-get($colors, 'info'),
+      'light': map-get($colors, 'light'),
+      'dark': map-get($colors, 'dark'),
+    ),
+    $colors
+  );
+}
+
+// :root {
+
+// }
+
+html {
+  background-color: $color-bg-primary;
+}
+
+html.dark {
+  background-color: $color-bg-dark;
+  color: $color-text-dark;
+}
