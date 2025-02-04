@@ -15,6 +15,7 @@ export default function Sidebar({
   draggableMarkup: JSX.Element | null;
   parent: string | null;
 }) {
+  console.log('hi');
   return (
     <div
       className={`bg-dark-foreground text-white w-64 fixed top-0 h-full transition-all duration-300 ease-in-out ${
